@@ -1,10 +1,8 @@
 ﻿using System;
 
-namespace SamuraiApp.domain
+namespace SamuraiApp.Domain
 {
     public class Class1
     {
-        //TODO
-        // Added this line
     }
 }

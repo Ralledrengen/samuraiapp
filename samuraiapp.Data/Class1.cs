@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace samuraiapp.Data
+namespace SamuraiApp.Data
 {
     public class Class1
     {

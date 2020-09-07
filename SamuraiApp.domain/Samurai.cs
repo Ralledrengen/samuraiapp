@@ -2,28 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SamuraiApp.domain
+namespace SamuraiApp.Domain
 {
     public class Samurai
     {
         public Samurai()
         {
-            Quotes = new List<Quotes>;
+            Quotes = new List<Quote>();
         }
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Quotes> Quotes { get; set; }
-        public Clan Clan { get; set; }
-    }
-
-    public class Clan
-    {
-        public int Id { get; set; }
-        public string ClanName { get; set; }
-    }
-
-    public class Quotes
-    {
-
+        public List<Quote> Quotes { get; set; }
+        public Clan Clans { get; set; }
     }
 }
