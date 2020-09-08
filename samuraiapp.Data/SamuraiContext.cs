@@ -9,7 +9,7 @@ namespace SamuraiApp.Data
 {
     public class SamuraiContext:DbContext
     {
-        //Nu til 3
+        //Nu til 4
         public virtual DbSet<Samurai> Samurais { get; set; }
         public virtual DbSet<Quote> Quotes { get; set; }
         public virtual DbSet<Clan> Clans { get; set; }
