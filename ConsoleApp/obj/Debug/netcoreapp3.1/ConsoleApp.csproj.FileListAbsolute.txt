@@ -55,3 +55,6 @@ C:\Users\Tec\Documents\skole'\samuraiapp\ConsoleApp\obj\Debug\netcoreapp3.1\Cons
 C:\Users\Tec\Documents\skole'\samuraiapp\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.dll
 C:\Users\Tec\Documents\skole'\samuraiapp\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.pdb
 C:\Users\Tec\Documents\skole'\samuraiapp\ConsoleApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Tec\Documents\skole'\samuraiapp\ConsoleApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Configuration.dll
+C:\Users\Tec\Documents\skole'\samuraiapp\ConsoleApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Console.dll
+C:\Users\Tec\Documents\skole'\samuraiapp\ConsoleApp\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
