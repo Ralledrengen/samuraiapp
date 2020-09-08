@@ -4,18 +4,12 @@ using System.Text;
 
 namespace SamuraiApp.Domain
 {
-    public class Samurai
+    public class Battle
     {
-        public Samurai()
-        {
-            Quotes = new List<Quote>();
-        }
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Quote> Quotes { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
         public List<SamuraiBattle> SamuraiBattles { get; set; }
-        public Clan Clans { get; set; }
-        public List<Horse> Horses { get; set; }
-
     }
 }
