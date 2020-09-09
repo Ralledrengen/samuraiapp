@@ -17,7 +17,7 @@ namespace SamuraiApp.Data
         {
             ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         }
-        //Nu til 8
+        //Nu til 9
         public virtual DbSet<Samurai> Samurais { get; set; }
         public virtual DbSet<Quote> Quotes { get; set; }
         public virtual DbSet<Clan> Clans { get; set; }
