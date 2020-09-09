@@ -16,11 +16,12 @@ namespace ConsoleAppg
             GetSamurais("Before Add: ");
             //AddSamurai();
             //GetSamurais("After Add: ");
-            //InsertMultipleSamurais();
             //InsertVariousType();
             //GetSamuraiSimpler();
             //Console.Write("Press Any Key.... ");
             //Console.ReadKey();
+            InsertMultipleSamurais();
+            QuerySamuraiBattleStats();
             QueryFilters();
         }
 
@@ -308,6 +309,31 @@ namespace ConsoleAppg
             .Where(s => s.Horses != null)
             .Select(s => new { Horse = s.Horses, Samurai = s })
             .ToList();
+        }
+        private static void QuerySamuraiBattleStats()
+        {
+            var stats = _context.SamuraiBattleStats.ToList();           
+        }
+        private static void QureyUsingRawSql()
+        {
+            var samurais = _context.Samurais.FromSqlRaw("Select Id, Name, ClanId from Samurais").Include(s => s.Quotes).ToList();
+        }
+        private static void InterpolatedRawSqlQueryStoredProc()
+        {
+            var text = "Happy";
+            var samurais = _context.Samurais.FromSqlInterpolated($"EXEC dbo.SamuraisWhoSaidAWord {text}").ToList(); 
+        }
+        private static void QueryUsingFromRawSqlStoredProc()
+        {
+            var text = "Happy";
+            var samurais = _context.Samurais.FromSqlRaw(
+            "EXEC dbo.SamuraisWhoSaidAWord {0}, text").ToList();
+        }
+        private static void ExecuteSomeRawSql()
+        {
+            var samuraiId = 22;
+            samuraiId = 31;
+            _context.Database.ExecuteSqlInterpolated($"EXEC DeleteQuotesForSamurai {samuraiId}");
         }
     }
 }

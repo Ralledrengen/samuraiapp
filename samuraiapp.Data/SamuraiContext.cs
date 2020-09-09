@@ -16,6 +16,7 @@ namespace SamuraiApp.Data
         public virtual DbSet<Quote> Quotes { get; set; }
         public virtual DbSet<Clan> Clans { get; set; }
         public virtual DbSet<Battle> Battles { get; set; }
+        public virtual DbSet<SamuraiBattleStat> SamuraiBattleStats { get; set; }
 
         public static readonly ILoggerFactory ConsoleLoggerFactory 
             = LoggerFactory.Create(builder =>
@@ -39,6 +40,7 @@ namespace SamuraiApp.Data
         {
             modelBuilder.Entity<SamuraiBattle>().HasKey(s => new { s.SamuraiId, s.BattleId });
             modelBuilder.Entity<Horse>().ToTable("Horse");
+            modelBuilder.Entity<SamuraiBattleStat>().HasNoKey().ToView("SamuraiBattleStats");
         }
     }
 }
