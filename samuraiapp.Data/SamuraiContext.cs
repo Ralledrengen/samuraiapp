@@ -11,13 +11,21 @@ namespace SamuraiApp.Data
 {
     public class SamuraiContext:DbContext
     {
+        private DbContextOptions options;
+
         public SamuraiContext() {}
         public SamuraiContext(DbContextOptions<SamuraiContext> options)
             : base(options)
         {
             ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         }
-        //Nu til 9
+
+        public SamuraiContext(DbContextOptions options)
+        {
+            this.options = options;
+        }
+
+        //Nu til 8
         public virtual DbSet<Samurai> Samurais { get; set; }
         public virtual DbSet<Quote> Quotes { get; set; }
         public virtual DbSet<Clan> Clans { get; set; }
@@ -29,6 +37,19 @@ namespace SamuraiApp.Data
             modelBuilder.Entity<SamuraiBattle>().HasKey(s => new { s.SamuraiId, s.BattleId });
             modelBuilder.Entity<Horse>().ToTable("Horse");
             modelBuilder.Entity<SamuraiBattleStat>().HasNoKey().ToView("SamuraiBattleStats");
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder
+                    //.UseLoggerFactory(ConsoleLoggerFactory)
+                    //.EnableSensitiveDataLogging()
+                    .UseSqlServer(
+                    "Data Source = (localdb)\\ MSSQLLocalDB; INITIAL CATALOG = SamuraiAppData");
+            }
+
         }
     }
 }
